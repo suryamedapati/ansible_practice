@@ -1,7 +1,7 @@
 - name: usage of variables from file
   hosts: local
   connection: local
-  vars:
+  vars_files:
   - variables.yml
   tasks:
   - name: printing capital of country
