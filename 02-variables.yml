@@ -1,0 +1,17 @@
+- name: script to use variables
+  hosts: local
+  connection: local
+  vars:
+    name: siva
+    occupation: student
+    age: 26
+  tasks:
+    - name: print the message
+      ansible.builtin.debug:
+        
+        msg: "Hi, I'm ${{ name }}. I'm ${{ age }} years old and working as a ${{ occupation }}"
+    
+    - name: print message differently
+      ansible.builtin.debug:
+        msg: "Hi, I'm {{ name }}. I'm {{ age }} years old and working as a {{ occupation }}"
+    
