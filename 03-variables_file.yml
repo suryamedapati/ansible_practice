@@ -1,0 +1,9 @@
+- name: usage of variables from file
+  hosts: local
+  connection: local
+  vars:
+  - variables.yml
+  tasks:
+  - name: printing capital of country
+    ansible.builtin.debug:
+      msg: "name of country is {{ country }}, capital is {{ capital }}"
